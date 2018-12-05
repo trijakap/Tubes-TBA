@@ -30,13 +30,13 @@ public class PDA {
         return status;
     }
     
-    public void addTransition(Character read,Character pop,String push,PDA state){
-        trans.add(new TransPDA(read, pop, push, state));
+    public void addTransition(Character input,Character pop,String push,PDA state){
+        trans.add(new TransPDA(input, pop, push, state));
     }
     
-    public PDA getNext(Stack<Character> stack , Character read,Character pop){
+    public PDA getNext(Stack<Character> stack , Character input,Character pop){
         for(TransPDA trans:trans){
-            if(trans.getRead().equals(read) && trans.getPop().equals(pop)){
+            if(trans.getInput().equals(input) && trans.getPop().equals(pop)){
                 for(int i=trans.getPush().length()-1; i>=0;i--){
                     stack.add(trans.getPush().charAt(i));
                 }
@@ -48,20 +48,20 @@ public class PDA {
     
     
     public class TransPDA {
-        private Character read;
+        private Character input;
 	private Character pop;
 	private String push;
 	private PDA next;
 
-	public TransPDA(Character read,Character pop, String push, PDA next) {
-		this.read = read;
+	public TransPDA(Character input,Character pop, String push, PDA next) {
+		this.input = input;
 		this.pop = pop;
 		this.push = push;
 		this.next = next;
 	}
 
-	public Character getRead() {
-		return read;
+	public Character getInput() {
+		return input;
 	}
 
 	public Character getPop() {

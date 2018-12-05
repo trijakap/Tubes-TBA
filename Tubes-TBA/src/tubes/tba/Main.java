@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tubes.tba;
 
 
@@ -10,10 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import java.util.Scanner;
-/**
- *
- * @author trijakapam
- */
+
 public class Main {
     public static FA subjek;
     public static FA predikat;
@@ -29,8 +21,7 @@ public class Main {
         String kalimat = scanner.nextLine();
         
         PisahKata pisah = new PisahKata(kalimat);
-        List<String> kata = pisah.getKata();
-        
+        List<String> kata = pisah.getKata();  
         Stack<Character> stack = new Stack<>();
             
         PDA init = new PDA("I");

@@ -8,10 +8,7 @@ package tubes.tba;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author trijakapam
- */
+
 public class PisahKata {
     String kalimat;
     public PisahKata (String kalimat){
@@ -26,7 +23,7 @@ public class PisahKata {
         while(i < kalimat.length()){
             if(kalimat.charAt(i) != ' '){
                a += kalimat.charAt(i);
-            }else if(kalimat.charAt(i) == ' '&& !a.equals("di")){
+            }else if(kalimat.charAt(i) == ' '&& a.equals("di") == false){
                 kata.add(a);
                 a = "";
             }else if(a.equals("di")){
