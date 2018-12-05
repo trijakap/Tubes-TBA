@@ -10,7 +10,19 @@ package tubes.tba;
  * @author trijakapam
  */
 public class TokenRecognizer {
-    public Character getState(String kata, FA subjek, FA predikat, FA objek, FA keterangan){
+    private FA subjek;
+    private FA predikat;
+    private FA objek;
+    private FA keterangan;
+
+    public TokenRecognizer(FA subjek, FA predikat, FA objek, FA keterangan) {
+        this.subjek = subjek;
+        this.predikat = predikat;
+        this.objek = objek;
+        this.keterangan = keterangan;
+    }
+    
+    public Character getState(String kata){
         if(isAccepted(kata , subjek)){
             System.out.print("s ");
             return 's';
@@ -28,5 +40,14 @@ public class TokenRecognizer {
             return 'k';
         }
         return 'w';
+    }
+    public static boolean isAccepted(String kata , FA initialState){
+            FA current = initialState;
+            int i=0;
+            while(current!=null && i<kata.length()){
+                current = current.getNext(kata.charAt(i));
+                i++;
+            }
+            return current !=null ? current.getIsFinal() : false;
     }
 }
