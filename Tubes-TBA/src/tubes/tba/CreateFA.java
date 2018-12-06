@@ -3,9 +3,6 @@ package tubes.tba;
 
 
 public class CreateFA {
-    public CreateFA(){
-        
-    }
     public FA subjek(){
         FA q0 = new FA("q0");
         FA q1 = new FA("q1");
@@ -25,7 +22,7 @@ public class CreateFA {
         q0.addTransisi('m', q1);
         q1.addTransisi('e', q2);
         q2.addTransisi('r', q8);
-        q8.addTransisi('e', q12);
+        q8.addTransisi('e', q13);
         q13.addTransisi('k', q7);
         q0.addTransisi('d', q6);
         q6.addTransisi('i', q7);

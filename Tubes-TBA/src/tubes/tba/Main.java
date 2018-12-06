@@ -29,22 +29,19 @@ public class Main {
         PDA q0 = new PDA("q0");
         PDA q1 = new PDA("q1");
         PDA q2 = new PDA("q2");
-        PDA q3 = new PDA("q3",true);
+        PDA f = new PDA("F",true);
         
         init.addTransition('-', '-', "S#", s);
         
-        s.addTransition('-', 'S', "spX", q0);
-        
+        s.addTransition('-', 'S', "spA", q0);  
         q0.addTransition('s', 's', "", q0);
         q0.addTransition('p', 'p', "", q0);
-        q0.addTransition('o', 'X', "Y", q1);
-        q0.addTransition('k', 'X', "", q2);
-        q0.addTransition('-', 'X', "", q2);
-        
-        q1.addTransition('-', 'Y', "", q2);
-        q1.addTransition('k', 'Y', "", q2);
-        
-        q2.addTransition('-', '#', "", q3);
+        q0.addTransition('o', 'A', "B", q1);
+        q0.addTransition('k', 'A', "", q2);
+        q0.addTransition('-', 'A', "", q2);
+        q1.addTransition('-', 'B', "", q2);
+        q1.addTransition('k', 'B', "", q2);
+        q2.addTransition('-', '#', "", f);
         
         subjek = createFA.subjek();
         predikat = createFA.predikat();
