@@ -84,7 +84,6 @@ public class CreateFA {
         FA q9 = new FA("q9");
         FA q10 = new FA("q10");
         FA q11 = new FA("q11",true);
-
         q0.addTransisi('a', q1);
         q1.addTransisi('i', q2);
         q2.addTransisi('r', q11);
@@ -102,11 +101,10 @@ public class CreateFA {
         return q0;
     }
     public FA keterangan(){
-        //di kali , di kabin , di kota , di kantin , di kampus
         FA q1 = new FA("q1");
         FA q2 = new FA("q2");
-        FA q3 = new FA("q3");//
-        FA q4 = new FA("q4");//
+        FA q3 = new FA("q3");
+        FA q4 = new FA("q4");
         FA q5 = new FA("q5");
         FA q6 = new FA("q6");
         FA q7 = new FA("q7");
@@ -114,7 +112,7 @@ public class CreateFA {
         FA q9 = new FA("q9");
         FA q10 = new FA("q10");
         FA q11 = new FA("q11");
-        FA q12= new FA("q12"); //
+        FA q12= new FA("q12"); 
         FA q13= new FA("q13"); 
         FA q14= new FA("q14"); 
         FA q15= new FA("q15"); 
@@ -124,9 +122,7 @@ public class CreateFA {
         FA q19= new FA("q19");
         FA q20= new FA("q20");
         FA q21= new FA("q21");
-        FA q22= new FA("q18",true); //
-
-
+        FA q22= new FA("q18",true); 
         q1.addTransisi('d', q2);     
         q2.addTransisi('i', q3);     
         q3.addTransisi(' ', q4);     

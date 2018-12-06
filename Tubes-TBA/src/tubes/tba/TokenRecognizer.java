@@ -39,6 +39,7 @@ public class TokenRecognizer {
             System.out.print("k ");
             return 'k';
         }
+        System.out.println("error");
         return 'w';
     }
     public static boolean isAccepted(String kata , FA initialState){
