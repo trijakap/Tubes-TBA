@@ -83,6 +83,8 @@ public class CreateFA {
         FA q8 = new FA("q8");
         FA q9 = new FA("q9");
         FA q10 = new FA("q10");
+        FA q13 = new FA("q13");
+        FA q12 = new FA("q12");
         FA q11 = new FA("q11",true);
         q0.addTransisi('a', q1);
         q1.addTransisi('i', q2);
@@ -98,6 +100,9 @@ public class CreateFA {
         q3.addTransisi('a', q6);
         q6.addTransisi('s', q9);
         q9.addTransisi('o', q11);
+        q3.addTransisi('o', q12);
+        q12.addTransisi('l', q13);
+        q13.addTransisi('a', q11);
         return q0;
     }
     public FA keterangan(){
